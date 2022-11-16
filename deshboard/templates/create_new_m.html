@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CITRIOT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar bg-dark navbar-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">CITRIOT</spam>
+            </div>
+        
+        </nav>
+   <h1 class="text-center text-success">WELCOME CITRIOT!</h1>
+
+   <div class="container-fluid">
+    <form action="{% url "TVS" %}" method="POST"   class="row g-3">
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">User Name</label>
+            <input name="username",type="text" class="form-control" id="">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Password</label>
+            <input name="password" type="text" class="form-control" id="">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Machine ID</label>
+            <input name="machine_ID" type="password" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+              <label for="inputPassword4" class="form-label"> Confirm Machine ID</label>
+              <input name="machine_IDC" type="password" class="form-control" id="inputPassword4">
+            </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Name of sensor</label>
+          <input name="sensor" type="text" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Temperature threshold value</label>
+            <input name="sensorname" type="text" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Noise threshold value</label>
+            <input name="sensorname" type="text" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Vibration x_axis threshold value</label>
+            <input name="sensorname" type="text" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Vibration y_axis threshold value</label>
+            <input name="sensorname" type="text" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Vibration z_axis threshold value</label>
+            <input name="sensorname" type="text" class="form-control" id="inputPassword4">
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"> Phone</label>
+            <input name="phone" type="text" class="form-control" id="inputPassword4">
+          </div>
+ 
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-success btn-lg">Create</button>
+        </div>
+      </form>
+
+
+      <div class="form-group">
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+         {% endfor %}
+    </div>
+
+
+
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

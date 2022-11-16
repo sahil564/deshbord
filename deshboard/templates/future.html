@@ -1,0 +1,143 @@
+{% load static %} 
+
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link
+   
+   
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    rel="stylesheet"/>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <style>      
+    </style>
+  
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar bg-light">
+        <a  href={% url "machine" %}  type="button" class="btn btn-success btn-lg">Machine<a>
+      </div>
+        <div class="navbar bg-light">
+            <a  href={% url "base11" %}  type="button" class="btn btn-success btn-lg">Future Prediction<a>
+        </div>
+    
+          <div class="navbar bg-light">
+            <a  href={% url "sensor" %}  type="button" class="btn btn-success btn-lg">Live Data Streaming<a>
+          </div>
+          <div class="navbar bg-light">
+       
+            <a  href={% url "stop" %}  type="button" class="btn btn-success btn-lg">Stop machine<a>
+          </div>
+          <div class="navbar bg-light">
+          <a  href={% url "delete" %} type="button" class="btn btn-success btn-lg">Delete Machine<a>
+          </div>
+    </nav>
+
+<div>
+
+
+
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <div class="card h-100">
+      <div class="card-header">
+        <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+        Future 30 days Temperature
+      </div>
+      <div class="card-body">
+        <canvas id="myChart" width="160" height="50"></canvas>
+        <h4 id="app">{{text}} </h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <div class="card h-100">
+
+      <div class="card-header">
+        <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+        Future 30 days Noise
+        </div>
+
+      <div class="card-body">
+        <canvas id="myChart1" width="160" height="50"></canvas>
+        <h4 id="app1">{{text}} </h4>
+      </div>
+      
+    </div>
+</div>
+</div>
+
+<div class="row d-flex">
+
+
+  <div class="col-md-6 mb-3">
+    <div class="card h-100">
+
+      <div class="card-header">
+        <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+        Future 30 days Vibration X_axis
+      </div>
+      <div class="card-body">
+        <canvas id="myChart2" width="160" height="50"></canvas>
+        <h4 id="app2">{{text}} </h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <div class="card h-100">
+
+      <div class="card-header">
+        <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+        Future 30 days Vibration Y_axis
+        </div>
+
+      <div class="card-body">
+        <canvas id="myChart3" width="160" height="50"></canvas>
+        <h4 id="app3">{{text}} </h4>
+      </div>
+     </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="card h-100">
+  
+        <div class="card-header">
+          <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+          Future 30 days Vibration Z_axis
+        </div>
+        <div class="card-body">
+          <canvas id="myChart4" width="160" height="50"></canvas>
+          <h4 id="app4">{{text}} </h4>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+  
+
+    </div>
+  </div>
+
+
+   
+    <script src="{% static 'data.js' %}"></script>
+  </body>
+</html>

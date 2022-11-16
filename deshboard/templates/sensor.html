@@ -1,0 +1,190 @@
+{% load static %} 
+
+<html>
+  <head>
+    {% include 'Mheader.html' %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link
+   
+   
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    rel="stylesheet"/>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="navbar bg-light">
+              <a  href={% url "machine" %}  type="button" class="btn btn-success btn-lg">Machine<a>
+          </div>
+            <div class="navbar bg-light">
+                <a  href="#"  type="button" class="btn btn-success btn-lg">coustomar name<a>
+            </div>
+            <div class="navbar bg-light">
+                <a  href="#"  type="button" class="btn btn-success btn-lg">Machine Unique ID<a>
+              </div>
+              <div class="navbar bg-light">
+                <a  href="#"  type="button" class="btn btn-success btn-lg">Number of Sensor<a>
+              </div>
+              <div class="navbar bg-light">
+           
+                <a  href="#"  type="button" class="btn btn-success btn-lg">Stop machine<a>
+              </div>
+              <div class="navbar bg-light">
+              <a  href="#"  type="button" class="btn btn-success btn-lg">Delete Machine<a>
+              </div>
+          </nav>
+    
+          </div>
+
+        </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-10 mx-auto mt-5">
+
+        
+          <canvas id="myChart" width="200" height="50"></canvas>
+    
+          
+          <canvas id="myChart1" width="200" height="50"></canvas>
+          <canvas id="myChart2" width="200" height="50"></canvas>
+          <canvas id="myChart3" width="200" height="50"></canvas>
+          <canvas id="myChart4" width="200" height="50"></canvas>
+          {% comment %} <h1 id="app1">{{text}} </h1>  {% endcomment %}
+        
+    
+    </div>
+
+
+
+
+{% comment %} 
+
+
+        <div class="live">
+          <script>
+            window.onload = function () {
+            
+            var dps = []; // dataPoints
+            var chart = new CanvasJS.Chart("chartContainer", {
+              title :{
+                text: "Live DATA Stream"
+              },
+              data: [{
+                type: "line",
+                dataPoints: dps
+              }]
+            });
+            
+            var xVal = 0;
+            var yVal = 100; 
+            var updateInterval = 1000;
+            var dataLength = 100; // number of dataPoints visible at any point
+            
+            var updateChart = function (count) {
+            
+              count = count || 1;
+            
+              for (var j = 0; j < count; j++) {
+                yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+                dps.push({
+                  x: xVal,
+                  y: yVal
+                });
+                xVal++;
+              }
+            
+              if (dps.length > dataLength) {
+                dps.shift();
+              }
+            
+              chart.render();
+            };
+            
+            updateChart(dataLength);
+            setInterval(function(){updateChart()}, updateInterval);
+            
+            }
+      
+      
+            </script>
+      
+        <div id="chartContainer" style="height: 370px; width:100%;"></div>
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      
+     </div> {% endcomment %}
+     <script src="{% static 'mainnew.js' %}"></script>
+    </body>
+
+</html>

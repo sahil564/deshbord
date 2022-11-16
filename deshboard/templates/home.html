@@ -1,0 +1,85 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    {% include 'header.html' %}
+	<style>
+		.gfg {
+			
+			position: relative;
+            width="100%;
+            height="500" 
+		}
+
+        .first-txt {
+            color: whitesmoke;
+            position: absolute;
+            top: 80px;
+            left: 400px;
+          }
+
+          .second-txt {
+            color: whitesmoke;
+            position: absolute;
+            bottom: 50px;
+            left: 140px;
+          }
+
+
+          .front-page{
+ 
+            margin-top: 20px;
+          
+          
+            background-color:black;
+          }
+          .heading{
+
+            padding-top: 20px;
+            text-align: center;
+            color: #ffffff;
+            
+          }
+          .heading-text{
+            margin-left: 10px;
+            color: #ffffff;
+            padding-bottom: 70px;
+          }
+          </style>
+</head>
+
+<body>
+	<div class="gfg">
+		<img width="100%" height="500" img src="{% static "R.jpeg" %}" alt="Hi!"> 
+		<h1 class="first-txt">
+            WELCOME TO CITRIOT
+                </h1>
+		
+		<h3 class="second-txt">
+            An AI company focused on Automation,IoT and IIoT.Fast,Reliable and Real Time Data
+        </h3>
+	</div>
+
+    <div class='front-page'>
+        <h2 class='heading'>CITRIOT: Unlimited Machine Uptime</h2>
+        <p class='heading-text'>Eliminate machine downtime with our innovative sensor node capable of monitoring your industrial machines 24/7 in real-time. Forget about unplanned downtime – schedule maintenance operations when it best suits your machine’s needs.</p>
+        </div>
+        
+        <img width="100%" height="500" img src="{% static "fire.jpg" %}" alt="Hi!">
+        
+        <div class='front-page'>
+        <h2 class='heading'>Better Machine Performance Means Better Plant Performance.</h2>
+        <p class='heading-text'>Did you know that machine breakdowns and downtime account for 20% of total production costs?<br>
+        
+        CITRIOT is an innovative solution driven by AI technology that allows you to prevent downtime, measure the efficiency of your machines without lifting a finger, and thus maximize machine uptime. Identify optimal production cycles, manage performance, and predict machine breakdowns all in real-time.</p>
+        </div>
+</body>
+
+</html>
+
+
+
+

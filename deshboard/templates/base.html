@@ -1,0 +1,52 @@
+{% load static  %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'Mheader.html' %}
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<title>realtime app </title>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="navbar bg-light">
+        <a  href={% url "machine" %}  type="button" class="btn btn-success btn-lg">Machine<a>
+    </div>
+    <div class="navbar bg-light">
+        <a  href="#"  type="button" class="btn btn-success btn-lg">Machine Unique ID<a>
+      </div>
+      <div class="navbar bg-light">
+        <a  href={% url "sensor" %}  type="button" class="btn btn-success btn-lg">Data stream from Sensors<a>
+      </div>
+      <div class="navbar bg-light">
+   
+        <a  href={% url "stop" %}  type="button" class="btn btn-success btn-lg">Stop machine<a>
+      </div>
+      <div class="navbar bg-light">
+      <a  href={% url "delete" %} type="button" class="btn btn-success btn-lg">Delete Machine<a>
+      </div>
+</nav>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-10 mx-auto mt-5">
+
+            <canvas id="myChart" width="200" height="50"></canvas>
+            <h1 id="app">{{text}} </h1>
+            <canvas id="myChart1" width="200" height="50"></canvas>
+            <h1 id="app1">{{text}} </h1>
+            <canvas id="myChart2" width="200" height="50"></canvas>
+            <h1 id="app2">{{text}} </h1>
+            <canvas id="myChart3" width="200" height="50"></canvas>
+            <h1 id="app3">{{text}} </h1>
+            <canvas id="myChart4" width="200" height="50"></canvas>
+            <h1 id="app4">{{text}} </h1>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'mains1.js' %}"></script>
+</body>
+</html>
